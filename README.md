@@ -38,5 +38,3 @@ options:
     -d --darken	    Use 16 color output "darken"
     -l --ligthen    Use 16 color output "lighten"
 ```
-
-For example you can edit the flag value of the script.
