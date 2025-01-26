@@ -9,12 +9,13 @@ Clone the repo
 git clone https://github.com/EJ-PJ/pywal16-wpgtk-script.git
 ```
 
-In your configuration file `wpg.conf` , change the value of the `execute_cmd` setting to `true`, 
-and set the 'command' value to the path of the Python script.
+In your configuration file `wpg.conf` , change the value of the `execute_cmd` setting to `true`.
 
 ```bash
 execute_cmd = true
 ```
+
+And set the 'command' value to the path (were your clone the repo) of the python script `pywal16-wpgtk-script.py`.
 
 ```bash
 command = python3 /path/to/the/script/pywal16-wpgtk-script.py --flag
@@ -39,6 +40,6 @@ command = python3 /path/to/the/script/pywal16-wpgtk-script.py --darken
 ```
 
 Or directly use the `Options` tab in the wpg GUI by enabling the `Run command after` 
-option and editing the `command` entry.
+option and editing the `command` entry by setting the the path of the python script.
 
 <img src="./wpgtk-gui-example.png" alt="wpgtk gui example" width="700">
