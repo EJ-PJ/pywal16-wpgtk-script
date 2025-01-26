@@ -15,10 +15,10 @@ In your configuration file `wpg.conf` , change the value of the `execute_cmd` se
 execute_cmd = true
 ```
 
-And set the 'command' value to the path (were your clone the repo) of the python script `pywal16-wpgtk-script.py`.
+And set the `command` value to the path of the python script `pywal16-wpgtk-script.py`.
 
 ```bash
-command = python3 /path/to/the/script/pywal16-wpgtk-script.py --flag
+command = python3 /path/where/you/clone/the/repoo/pywal16-wpgtk-script.py --flag
 ```
 
 ## Usage 
