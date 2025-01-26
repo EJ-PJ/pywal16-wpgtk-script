@@ -41,4 +41,4 @@ command = python3 /path/to/the/script/pywal16-wpgtk-script.py --darken
 Or directly use the 'Options' tab in the wpg GUI by enabling the 'Run command after' 
 option and editing the 'command' entry.
 
-<img src="./wpgtk-gui-example.png" alt="wpgtk gui example" width="200">
+<img src="./wpgtk-gui-example.png" alt="wpgtk gui example" width="700">
