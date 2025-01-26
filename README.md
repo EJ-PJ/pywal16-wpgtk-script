@@ -9,7 +9,7 @@ Clone the repo
 git clone https://github.com/EJ-PJ/pywal16-wpgtk-script.git
 ```
 
-In your configuration file 'wpg.conf', change the value of the 'execute_cmd' setting to 'true', 
+In your configuration file `wpg.conf` , change the value of the `execute_cmd` setting to `true`, 
 and set the 'command' value to the path of the Python script.
 
 ```bash
@@ -22,7 +22,7 @@ command = python3 /path/to/the/script/pywal16-wpgtk-script.py --flag
 
 ## Usage 
 
-By simply passing the flags to the scripts you can ither choose between 'darken' or 'lighten'
+By simply passing the flags to the scripts you can ither choose between `darken` or `lighten` 
 
 ```bash
 pywal16-wpgtk-script.py [--darken | --lighten] [-d | -l]
@@ -38,7 +38,7 @@ For example you can edit the flag value of the script.
 command = python3 /path/to/the/script/pywal16-wpgtk-script.py --darken
 ```
 
-Or directly use the 'Options' tab in the wpg GUI by enabling the 'Run command after' 
-option and editing the 'command' entry.
+Or directly use the `Options` tab in the wpg GUI by enabling the `Run command after` 
+option and editing the `command` entry.
 
 <img src="./wpgtk-gui-example.png" alt="wpgtk gui example" width="700">
