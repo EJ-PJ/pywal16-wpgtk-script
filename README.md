@@ -29,7 +29,7 @@ option and editing the `Command` entry by setting the the path of the python scr
 
 ## Usage 
 
-By simply passing the flag to the script you can ither choose between `darken` or `lighten` 
+By passing the flag to the script you can ither choose between `darken` or `lighten` 
 
 ```bash
 pywal16-wpgtk-script.py [--darken | -d | --lighten | -l]
