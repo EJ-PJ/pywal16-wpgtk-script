@@ -1,38 +1,60 @@
 import wpgtk
 import subprocess
-import sys
+import argparse
 
 def get_wal_arg():
 
-    WAL_ARG = sys.argv
+    parser = argparse.ArgumentParser()
 
-    if (len(WAL_ARG) == 1) or (len(WAL_ARG) > 2):
-        error_output(error_num=1)
-        sys.exit(0)
+    parser.add_argument(
+        "--cols16",
+        help="Use 16 color output \"darken\" or \"lighten\" default: darken\"",
+        nargs=1,
+        metavar="[method]"
+        )
+    parser.add_argument(
+        "--contrast",
+        help="Specify a minimum contrast ratio between pallete colors and the \
+        source image according to W3 contrast specifications. \
+        Values between 1.5-4.5 typically work best.",
+        metavar="[1.0-21.0]",
+        nargs=1
+        )
+    parser.add_argument(
+        "-w",
+        help="Use last used wallpaper for color generation.",
+        action='store_true',
+        )
+    parser.add_argument(
+        "--recursive",
+        help="When pywal is given a directory as input and this flag is \
+        used: Search for images recursively in subdirectories instead of the root only.",
+        action='store_true',
+        )
 
-    if (WAL_ARG[1] == "--darken") or (WAL_ARG[1] == "-d"):
-        print("pywal16_wpgtk_script: using 16 color output 'darken'\n")
-        return "darken"
-    elif WAL_ARG[1] == "--lighten" or (WAL_ARG[1] == "-l"):
-        print("pywal16_wpgtk_script: using 16 color output 'lighten'\n")
-        return "lighten"
-    else:
-        error_output(error_num=2, wrong_arg=WAL_ARG[1])
+    args = parser.parse_args() #original args
 
-def error_output(error_num, wrong_arg=''):
+    pyw_args = [] #args that will be send to the 'wal' command
 
-    ERR_MSG_PYWL = "pywal16_wpgtk_script"
-    ERR_MSG_1 = "error: Too many or very few arguments"
-    ERR_MSG_2 = f"error: '{wrong_arg}' Is not a valid argument"
+    if args.cols16 != None:
+        pyw_args.append("--cols16")
+        pyw_args.append(args.cols16[0])
 
-    if error_num == 1:
-        print(ERR_MSG_PYWL, ERR_MSG_1)
-        sys.exit(0)
-    elif error_num == 2:
-        print(ERR_MSG_PYWL, ERR_MSG_2)
-        sys.exit(0)
+    if args.contrast != None:
+        pyw_args.append("--contrast")
+        pyw_args.append(args.contrast[0])
+
+    if args.w:
+        pyw_args.append("-w")
+
+    if args.recursive:
+        pyw_args.append("--recursive")
+
+    return pyw_args
 
 def exec_wal():
+
+    WAL_ARGS = get_wal_arg()
 
     WALL_DIR = wpgtk.data.config.WALL_DIR
     WALL_NAME = subprocess.check_output(['wpg', '-c'])
@@ -41,7 +63,12 @@ def exec_wal():
 
     WALL_FILE =  WALL_DIR + '/' + DECODE_WALL_NAME
 
-    subprocess.run(["wal", "-i", WALL_FILE, "--cols16", get_wal_arg()])
+
+    WAL_ARGS.insert(0, WALL_FILE)
+    WAL_ARGS.insert(0, "-i")
+    WAL_ARGS.insert(0, "wal")
+
+    subprocess.run(WAL_ARGS)
 
 def main():
     exec_wal()
