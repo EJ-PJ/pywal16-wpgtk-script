@@ -29,11 +29,7 @@ option and editing the `Command` entry by setting the the path of the python scr
 
 ## Usage 
 
-<<<<<<< HEAD
 By passing the flag to the script you can ither choose between `darken` or `lighten` 
-=======
-You can use the same flags that are used in Pywal16.
->>>>>>> 5c24933 (Update README whit new commands)
 
 ```bash
 pywal16-wpgtk-script.py [--cols16 [method]] [--contrast [1.0-21.0]] [-w] [--recursive]
