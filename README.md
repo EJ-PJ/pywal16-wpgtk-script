@@ -29,14 +29,14 @@ option and editing the `Command` entry by setting the the path of the python scr
 
 ## Usage 
 
-By passing the flag to the script you can ither choose between `darken` or `lighten` 
+You can use the same flags that are used in Pywal16.
 
 ```bash
 pywal16-wpgtk-script.py [--cols16 [method]] [--contrast [1.0-21.0]] [-w] [--recursive]
 
 options:
     -h, --help            show this help message and exit
-    --cols16 [method]     Use 16 color output "darken" or "lighten" default: darken"
+    --cols16 [method]     Use 16 color output "darken" or "lighten" default: "darken"
     --contrast [1.0-21.0]
 			  Specify a minimum contrast ratio between pallete colors and the source image according to W3 contrast specifications. Values between 1.5-4.5
 			  typically work best.
